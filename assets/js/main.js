@@ -50,3 +50,19 @@
   });
 })();
 
+/* Bind all CTA buttons with data-wa="true" to WhatsApp */
+(function(){
+  const elements = document.querySelectorAll('[data-wa="true"]');
+  const phoneIntl = '51940886264';
+  const baseMsg = 'Hola, quiero más información sobre la Maestría en Ciencias Bíblicas.';
+  elements.forEach(function(el){
+    el.addEventListener('click', function(ev){
+      if(el.tagName.toLowerCase() === 'a' && el.getAttribute('href')?.startsWith('http')){ return; }
+      ev.preventDefault();
+      const extra = el.getAttribute('data-msg') || '';
+      const url = `https://wa.me/${phoneIntl}?text=${encodeURIComponent(baseMsg + (extra? '\n' + extra : ''))}`;
+      window.open(url, '_blank');
+    });
+  });
+})();
+

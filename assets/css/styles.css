@@ -1,13 +1,13 @@
 /* Theme */
-:root{--bs-primary:#0d6efd;--accent-1:#0b5ed7;--surface: #0f172a}
-body{font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial,'Noto Sans',sans-serif;color:#0b1220}
+:root{--brand-navy:#0a2142;--brand-cyan:#00b3e6;--brand-cyan-600:#0894be;--brand-gold:#f4b400;--surface:#0f172a;--bs-primary:var(--brand-cyan)}
+body{font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial,'Noto Sans',sans-serif;color:#0b1220;line-height:1.6}
 html{scroll-behavior:smooth}
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
 
 /* Hero */
-.hero{min-height:72vh;display:flex;align-items:center;background:#0b1220;overflow:hidden}
-.hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;filter:contrast(1.1) brightness(.5)}
-.hero-gradient{position:absolute;inset:auto 0 0 0;height:180px;background:linear-gradient(to top, #0b1220, rgba(11,18,32,0))}
+.hero{min-height:72vh;display:flex;align-items:center;background:var(--brand-navy);overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1529070538774-1843cb3265df?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;filter:contrast(1.05) brightness(.55)}
+.hero-gradient{position:absolute;inset:0;background:linear-gradient(120deg, rgba(10,33,66,.9) 0%, rgba(10,33,66,.65) 55%, rgba(10,33,66,.35) 100%)}
 .fw-extrabold{font-weight:800}
 .v-check{list-style:none;padding-left:0}
 .v-check li{position:relative;padding-left:28px;margin:.5rem 0}
@@ -19,9 +19,9 @@ html{scroll-behavior:smooth}
 .pricing .display-6{letter-spacing:-0.5px}
 
 /* Sticky CTA */
-.sticky-cta{position:fixed;left:0;right:0;bottom:0;background:#0d6efd;color:#fff;display:flex;justify-content:space-between;align-items:center;padding:.9rem 1rem;text-decoration:none;z-index:1030;box-shadow:0 -8px 24px rgba(0,0,0,.15)}
+.sticky-cta{position:fixed;left:0;right:0;bottom:0;background:var(--brand-cyan);color:#001a2b;display:flex;justify-content:space-between;align-items:center;padding:.9rem 1rem;text-decoration:none;z-index:1030;box-shadow:0 -8px 24px rgba(0,0,0,.15)}
 .sticky-cta strong{font-weight:700}
-.sticky-cta:hover{color:#fff;background:#0b5ed7}
+.sticky-cta:hover{color:#001a2b;background:var(--brand-cyan-600)}
 
 /* WhatsApp FAB */
 .whatsapp-fab{position:fixed;right:18px;bottom:78px;background:#25d366;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 12px 30px rgba(0,0,0,.25);z-index:1030}
@@ -30,4 +30,17 @@ html{scroll-behavior:smooth}
 @media (min-width:768px){
   .sticky-cta{display:none}
 }
+
+/* Header tweaks */
+.navbar{border-bottom:1px solid rgba(0,0,0,.06)}
+.navbar .btn-primary{color:#001a2b}
+
+/* CTA Bands */
+.cta-band{background:var(--brand-navy);color:#fff}
+.cta-band .btn{background:var(--brand-cyan);border-color:var(--brand-cyan);color:#001a2b}
+.cta-band .btn:hover{background:var(--brand-cyan-600);border-color:var(--brand-cyan-600);color:#001a2b}
+
+/* Minimal cards */
+.card{border-radius:.75rem}
+.badge{border-radius:.5rem}
 
