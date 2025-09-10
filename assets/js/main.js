@@ -20,6 +20,22 @@
   setInterval(render, 1000); render();
 })();
 
+/* Scarcity slots (randomized daily within range) */
+(function(){
+  const SLOT_MIN = 3, SLOT_MAX = 12; // aggressive scarcity within reasonable range
+  const key = 'slots-'+new Date().toISOString().slice(0,10);
+  let slots = parseInt(localStorage.getItem(key) || '0', 10);
+  if(!slots){
+    slots = Math.floor(Math.random()*(SLOT_MAX-SLOT_MIN+1))+SLOT_MIN;
+    localStorage.clear(); // new day
+    localStorage.setItem(key, String(slots));
+  }
+  function render(){
+    document.querySelectorAll('.js-slots').forEach(function(el){ el.textContent = String(slots); });
+  }
+  render();
+})();
+
 /* Form -> WhatsApp funnel */
 (function(){
   const form = document.getElementById('leadForm');
@@ -64,5 +80,29 @@
       window.open(url, '_blank');
     });
   });
+})();
+
+/* Exit intent modal */
+(function(){
+  const modalEl = document.getElementById('exitModal');
+  if(!modalEl) return;
+  const modal = new bootstrap.Modal(modalEl);
+  let shown = false;
+  const onMouseOut = function(e){
+    if(shown) return;
+    if(!e.toElement && !e.relatedTarget && e.clientY <= 0){
+      shown = true; modal.show();
+    }
+  };
+  document.addEventListener('mouseout', onMouseOut);
+  const exitBtn = document.getElementById('exitWaBtn');
+  if(exitBtn){
+    exitBtn.addEventListener('click', function(ev){
+      ev.preventDefault();
+      const phoneIntl = '51940886264';
+      const url = `https://wa.me/${phoneIntl}?text=${encodeURIComponent('Hola, vi la Maestría y deseo ayuda para inscribirme.')}`;
+      window.open(url, '_blank');
+    });
+  }
 })();
 

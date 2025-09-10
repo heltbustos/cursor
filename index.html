@@ -67,7 +67,7 @@
               <a href="#precio" class="btn btn-lg btn-outline-light" data-wa="true" data-msg="Quiero conocer las opciones de pago">Ver inversión</a>
             </div>
             <div class="mt-4 small opacity-75">
-              Cierre de inscripciones en <span id="countdown" class="fw-bold"></span>
+              Cierre de inscripciones en <span id="countdown" class="fw-bold"></span> · Plazas hoy: <span class="fw-bold js-slots"></span>
             </div>
           </div>
           <div class="col-lg-5">
@@ -90,6 +90,49 @@
         </div>
       </div>
       <div class="hero-gradient"></div>
+    </section>
+
+    <section id="beneficios" class="py-5">
+      <div class="container">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-6">
+            <h2 class="h1">Beneficios al inscribirte</h2>
+            <ul class="v-check">
+              <li>Acceso inmediato a material de bienvenida y cronograma.</li>
+              <li>Clases en vivo + grabaciones, campus disponible 24/7.</li>
+              <li>Mentorías grupales mensuales con docentes.</li>
+              <li>Certificación y acompañamiento para publicación académica.</li>
+            </ul>
+            <a href="#inscripcion" class="btn btn-primary mt-2" data-wa="true" data-msg="Beneficios: quiero inscribirme">Quiero aprovechar estos beneficios</a>
+          </div>
+          <div class="col-lg-6">
+            <img class="img-fluid rounded shadow-sm" src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=1200&auto=format&fit=crop" alt="Estudio y mentorías">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="para-quien" class="py-5 bg-light">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-6">
+            <h2 class="h1">¿Para quién es?</h2>
+            <ul class="v-check">
+              <li>Docentes, investigadores y líderes que buscan rigor académico.</li>
+              <li>Quienes desean dominar hebreo, arameo y griego bíblico.</li>
+              <li>Interesados en exégesis, historia de Israel y cristianismo primitivo.</li>
+            </ul>
+          </div>
+          <div class="col-lg-6">
+            <h2 class="h1">¿Para quién no es?</h2>
+            <ul class="list-unstyled">
+              <li class="mb-2">✕ Buscas un curso corto sin compromiso académico.</li>
+              <li class="mb-2">✕ No te interesan lenguas bíblicas ni investigación seria.</li>
+              <li class="mb-0">✕ Prefieres contenidos sin evaluación ni acompañamiento.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="objetivo" class="py-5">
@@ -189,6 +232,7 @@
                   <li>Acceso a material introductorio</li>
                 </ul>
                 <a href="#inscripcion" class="btn btn-primary w-100" data-wa="true" data-msg="Deseo reservar mi cupo (inscripción $200)">Reservar ahora</a>
+                <p class="small text-muted text-center mt-2">Plazas hoy: <span class="js-slots"></span></p>
               </div>
             </div>
           </div>
@@ -207,6 +251,7 @@
                   <li>Certificación al finalizar</li>
                 </ul>
                 <a href="#inscripcion" class="btn btn-primary w-100" data-wa="true" data-msg="Quiero el programa completo ($2500)">Quiero inscribirme</a>
+                <p class="small text-muted text-center mt-2">Plazas hoy: <span class="js-slots"></span></p>
               </div>
             </div>
           </div>
@@ -218,9 +263,17 @@
       <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-3">
         <div>
           <h2 class="h3 m-0">Asegura tu cupo hoy</h2>
-          <p class="m-0">Inscríbete y recibe acceso inmediato al material de bienvenida.</p>
+          <p class="m-0">Inscríbete y recibe acceso inmediato al material de bienvenida. Plazas hoy: <span class="js-slots"></span></p>
         </div>
         <a href="#inscripcion" class="btn btn-lg btn-primary" data-wa="true" data-msg="Asegurar mi cupo desde banda CTA">Quiero mi lugar</a>
+      </div>
+    </section>
+
+    <section id="convenio" class="py-5">
+      <div class="container text-center">
+        <p class="text-uppercase text-muted small mb-2">Respaldo institucional</p>
+        <h2 class="h1">Convenio académico</h2>
+        <p class="mx-auto" style="max-width:740px">Programa desarrollado por el Centro de Estudios Bíblicos LIMUD en convenio con Remzion University of Jerusalem (RUJ), garantizando estándares académicos elevados.</p>
       </div>
     </section>
 
@@ -383,6 +436,25 @@
         </div>
       </div>
     </footer>
+
+    <!-- Exit Intent Modal -->
+    <div class="modal fade" id="exitModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Antes de salir…</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>Quedan <strong class="js-slots"></strong> plazas disponibles hoy. ¿Deseas que un asesor te contacte por WhatsApp?</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Seguir navegando</button>
+            <a href="#" class="btn btn-primary" id="exitWaBtn">Sí, escríbanme</a>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <a href="#inscripcion" class="sticky-cta d-md-none">
       <span>Inscribirme</span>
