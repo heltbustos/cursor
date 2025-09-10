@@ -1,0 +1,33 @@
+/* Theme */
+:root{--bs-primary:#0d6efd;--accent-1:#0b5ed7;--surface: #0f172a}
+body{font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial,'Noto Sans',sans-serif;color:#0b1220}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+
+/* Hero */
+.hero{min-height:72vh;display:flex;align-items:center;background:#0b1220;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;filter:contrast(1.1) brightness(.5)}
+.hero-gradient{position:absolute;inset:auto 0 0 0;height:180px;background:linear-gradient(to top, #0b1220, rgba(11,18,32,0))}
+.fw-extrabold{font-weight:800}
+.v-check{list-style:none;padding-left:0}
+.v-check li{position:relative;padding-left:28px;margin:.5rem 0}
+.v-check li::before{content:"✓";position:absolute;left:0;top:0;color:#16a34a;font-weight:700}
+.feature-card{background:#fff;border:1px solid rgba(0,0,0,.06);border-radius:.75rem;padding:1.25rem}
+.feature-card h3{margin-bottom:.5rem}
+
+/* Pricing */
+.pricing .display-6{letter-spacing:-0.5px}
+
+/* Sticky CTA */
+.sticky-cta{position:fixed;left:0;right:0;bottom:0;background:#0d6efd;color:#fff;display:flex;justify-content:space-between;align-items:center;padding:.9rem 1rem;text-decoration:none;z-index:1030;box-shadow:0 -8px 24px rgba(0,0,0,.15)}
+.sticky-cta strong{font-weight:700}
+.sticky-cta:hover{color:#fff;background:#0b5ed7}
+
+/* WhatsApp FAB */
+.whatsapp-fab{position:fixed;right:18px;bottom:78px;background:#25d366;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 12px 30px rgba(0,0,0,.25);z-index:1030}
+.whatsapp-fab:hover{color:#fff;opacity:.95}
+
+@media (min-width:768px){
+  .sticky-cta{display:none}
+}
+
